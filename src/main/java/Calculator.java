@@ -1,8 +1,94 @@
 import java.lang.Math;
 import java.util.Scanner;
-
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class Calculator {
+	
+	private Logger logger  = LogManager.getLogger(Calculator.class);
+	
+	public double squareRoot(double val)
+	{
+		double ans;
+		if(val <0)
+		{
+			logger.error("[SQUARE ROOT] - " + val);
+		    logger.error("[RESULT - SQUARE ROOT] - " + "null");
+			ans = -1;
+		}
+			
+		else
+		{
+			ans = Math.sqrt(val);
+			logger.info("[SQUARE ROOT] - " + val);
+		    logger.info("[RESULT - SQUARE ROOT] - " + ans);
+		}
+			
+		return ans;
+	}
+	
+	
+	public double factorial(double val)
+	{
+		double ans = 1;
+		
+		if(val <0)
+		{	
+			logger.error("[FACTORIAL] - " + val);
+		    logger.error("[RESULT - FACTORIAL] - " + "null");
+			ans = -1;
+		}
+		
+		else
+		{
+			for(int i=1; i<=val; i++)
+				ans *= i;
+			logger.info("[FACTORIAL] - " + val);
+		    logger.info("[RESULT - FACTORIAL] - " + ans);
+		}
+		
+		return ans;
+	}
+	
+	public double logarithm(double val)
+	{
+		double ans;
+		if(val <=0) {
+			ans = -1;
+			logger.error("[LOGARITHM] - " + val);
+		    logger.error("[RESULT - LOGARITHM] - " + "null");
+		}
+	
+		else
+		{
+			ans = Math.log(val);
+			logger.info("[LOGARITHM] - " + val);
+		    logger.info("[RESULT - LOGARITHM] - " + ans);
+		}
+			
+		return ans;
+	}
+	
+	public double power(double val1, double val2)
+	{
+		double ans;
+		
+		if(val1==0 && val2==0)
+		{
+			ans = -1;
+			logger.error("[POWER] - " + val1 + ", " + val2);
+		    logger.error("[RESULT - POWER] - " + "null");
+		}
+			
+		
+		else {
+			ans = Math.pow(val1,val2);
+			logger.info("[POWER] - " + val1 + ", " + val2);
+		    logger.info("[RESULT - POWER] - " + ans);
+		}
+		
+		return ans;
+	}
 	
 	public static void main(String[] args) {
 		
@@ -93,52 +179,5 @@ public class Calculator {
 		
 	}
 	
-	public double squareRoot(double val)
-	{
-		double ans;
-		if(val <0)
-			ans = -1;
-		else
-			ans = Math.sqrt(val);
-		return ans;
-	}
 	
-	
-	public double factorial(double val)
-	{
-		double ans = 1;
-		
-		if(val <0)
-			ans = -1;
-		else
-		{
-			for(int i=1; i<=val; i++)
-				ans *= i;
-		}
-		
-		return ans;
-	}
-	
-	public double logarithm(double val)
-	{
-		double ans;
-		if(val <=0)
-			ans = -1;
-		else
-			ans = Math.log(val);
-		return ans;
-	}
-	
-	public double power(double val1, double val2)
-	{
-		double ans;
-		
-		if(val1==0 && val2==0)
-			ans = -1;
-		
-		else
-			ans = Math.pow(val1,val2);
-		
-		return ans;
-	}
 }
