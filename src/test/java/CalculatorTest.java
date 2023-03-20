@@ -13,6 +13,7 @@ public class CalculatorTest {
         assertEquals("Finding Square Root of a value for True positive",5,calc.squareRoot(25), delta);
         assertEquals("Finding Square Root of a value for True positive",4,calc.squareRoot(16), delta);
         assertEquals("Finding Square Root of a value for True positive",13,calc.squareRoot(169), delta);
+        assertEquals("Finding Square Root of a value for True positive",6,calc.squareRoot(36), delta);
     }
 
     @Test
