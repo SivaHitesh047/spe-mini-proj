@@ -30,7 +30,8 @@ public class CalculatorTest {
         assertEquals("Finding factorial of a number for True positive",2,calc.factorial(2), delta);
         assertEquals("Finding factorial of a number for True positive",120,calc.factorial(5), delta);
         assertEquals("Finding factorial of a number for True positive",40320,calc.factorial(8), delta);
-
+        assertEquals("Finding factorial of a number for True positive",720,calc.factorial(6), delta);
+        
     }
 
     @Test
